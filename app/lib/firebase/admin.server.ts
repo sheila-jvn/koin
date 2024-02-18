@@ -1,5 +1,6 @@
 import type { ServiceAccount } from "firebase-admin/app";
-import * as adminSDK from "firebase-admin/app";
+import * as sdkApp from "firebase-admin/app";
+import * as sdkDB from "firebase-admin/firestore";
 import { singleton } from "../utils/singleton.server";
 
 const serviceAccount = {
@@ -17,7 +18,9 @@ const serviceAccount = {
 };
 
 export const adminApp = singleton("admin-app", () =>
-  adminSDK.initializeApp({
-    credential: adminSDK.cert(serviceAccount as ServiceAccount),
+  sdkApp.initializeApp({
+    credential: sdkApp.cert(serviceAccount as ServiceAccount),
   })
 );
+
+export const adminDB = sdkDB.getFirestore(adminApp);
