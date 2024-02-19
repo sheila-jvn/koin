@@ -1,7 +1,7 @@
 import type { ServiceAccount } from "firebase-admin/app";
 import * as sdkApp from "firebase-admin/app";
 import * as sdkDB from "firebase-admin/firestore";
-import { singleton } from "../utils/singleton.server";
+import { singleton } from "../singleton.server";
 
 const serviceAccount = {
   type: process.env.CREDENTIALS_TYPE,

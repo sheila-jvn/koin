@@ -1,9 +1,9 @@
 import { faker } from "@faker-js/faker";
-import { adminDB } from "~/lib/firebase/admin.server";
 import {
   getPercentage,
   roundToNearestMultiplierOf500,
-} from "~/lib/utils/calculation";
+} from "~/lib/calculation";
+import { adminDB } from "~/lib/firebase/admin.server";
 import { mutationCollection, savingsCollection } from "../collections";
 import type { Mutation, Savings } from "../types";
 
