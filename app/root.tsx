@@ -18,7 +18,7 @@ import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
 import "@mantine/notifications/styles.css";
 import "@mantine/nprogress/styles.css";
-import { theme } from "./theme/theme";
+import { resolver, theme } from "./theme/theme";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -32,10 +32,14 @@ export default function Root() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        <ColorSchemeScript />
+        <ColorSchemeScript forceColorScheme="dark" />
       </head>
       <body>
-        <MantineProvider theme={theme}>
+        <MantineProvider
+          theme={theme}
+          cssVariablesResolver={resolver}
+          forceColorScheme="dark"
+        >
           <Outlet />
           <ScrollRestoration />
           <Scripts />

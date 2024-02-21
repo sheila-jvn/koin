@@ -17,7 +17,6 @@ export default function App() {
   return (
     <Container
       size="sm"
-      bg="red"
       h="100vh"
       p={0}
       display="grid"
@@ -29,7 +28,7 @@ export default function App() {
         <TextInput placeholder="Search for mutations..." />
       </Box>
       <ScrollArea>
-        <Box bg="yellow" p={24}>
+        <Box p={24}>
           <Text>Wow body content wow</Text>
           <Text>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
@@ -47,11 +46,27 @@ export default function App() {
         </Box>
       </ScrollArea>
       <Group bg="orange" px={24} py={16} gap={32} pos="relative">
-        <ActionIcon size="xl">
-          <Icon height={rem(32)} icon="material-symbols:description-outline" />
+        <ActionIcon size={56}>
+          <Icon
+            style={{
+              height: rem(32),
+              width: rem(32),
+            }}
+            height={32}
+            width={32}
+            icon="material-symbols:description-outline"
+          />
         </ActionIcon>
-        <ActionIcon size="xl">
-          <Icon height={rem(32)} icon="material-symbols:groups-outline" />
+        <ActionIcon size={56}>
+          <Icon
+            style={{
+              height: rem(32),
+              width: rem(32),
+            }}
+            height={32}
+            width={32}
+            icon="material-symbols:groups-outline"
+          />
         </ActionIcon>
 
         <Box
@@ -61,7 +76,15 @@ export default function App() {
           style={{ transform: "translateY(-50%)" }}
         >
           <ActionIcon size={56}>
-            <Icon height={rem(32)} icon="material-symbols:add" />
+            <Icon
+              style={{
+                height: rem(32),
+                width: rem(32),
+              }}
+              height={32}
+              width={32}
+              icon="material-symbols:add"
+            />
           </ActionIcon>
         </Box>
       </Group>
